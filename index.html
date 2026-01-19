@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil P Marihal | Business Analytics Portfolio</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML7WMFJGG3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ML7WMFJGG3');
+    </script>
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-card-light: #334155;
+            --text: #f1f5f9;
+            --text-light: #cbd5e1;
+            --border: #475569;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            text-decoration: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--dark-card);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background-color: var(--dark-card-light);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 80px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 22px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--dark-bg);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--dark-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Certifications & Awards */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item, .award-item {
+            background-color: var(--dark-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--success);
+        }
+
+        .award-item {
+            border-left-color: var(--warning);
+        }
+
+        /* Contact & Links */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background-color: var(--dark-card);
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background-color: var(--dark-card-light);
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-card);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 150px 0 80px;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-dot {
+                left: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Nikhil<span>PM</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container hero">
+            <div class="hero-content">
+                <h1>Nikhil P Marihal</h1>
+                <div class="tagline">Business Analytics Student & AI Enthusiast</div>
+                <p class="subtitle">
+                    Business Analytics student at PES University and Google Gemini Certified University Student, skilled in SQL, Python, Tableau and Statistics. 
+                    Experienced in data visualization, predictive modeling and process automation, with hands-on exposure to AI agents, Generative AI and automation workflows.
+                </p>
+                <p class="subtitle">
+                    Driven by a passion for sports analytics and AI-powered innovation, I aim to leverage analytics, machine learning, and automation to simplify complexity, enhance decision-making and deliver impactful insights.
+                </p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <img src="C:\Users\ASUS\Downloads\WhatsApp Image 2026-01-17 at 19.30.36.jpeg"
+                     alt="Nikhil P Marihal - Business Analytics Professional">
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Education -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About & Education</h2>
+            </div>
+            <div class="card">
+                <h3>Bachelor of Business Administration (BBA) in Business Analytics</h3>
+                <p><strong>PES University, Bengaluru | July 2023 – July 2027</strong></p>
+                <p>Specialization in Finance with focus on analytics, machine learning, and data-driven decision making.</p>
+                <p>Currently pursuing advanced courses in statistical analysis, predictive modeling, and AI applications in business contexts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" style="background-color: rgba(30, 41, 59, 0.3);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">May 2025 – August 2025</div>
+                    <div class="card">
+                        <h3>Data Associate Intern — Lfi (Infotact Solutions)</h3>
+                        <p>Built interactive dashboards and analyzed business data using Excel, SQL, and Tableau. Designed and deployed Tableau dashboards for business intelligence reporting. Conducted advanced data analysis and automation using SQL and Excel. Generated insights that improved operational efficiency by 15%.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">June 2025 – July 2025</div>
+                    <div class="card">
+                        <h3>Machine Learning Intern — ExcelFore Corporation</h3>
+                        <p>Developed a machine learning model to predict loan defaults, aligning insights with business objectives. Built an end-to-end ML pipeline encompassing data preprocessing, modeling, and evaluation. Enhanced model accuracy through advanced feature engineering and optimization techniques. Implemented data cleaning protocols, improving data quality by 40%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category card">
+                    <h3>Programming & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Google BigQuery</span>
+                    </div>
+                </div>
+                <div class="skill-category card">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">AI Agents</span>
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">AI Fluency</span>
+                    </div>
+                </div>
+                <div class="skill-category card">
+                    <h3>Data Analytics Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Google Looker Studio</span>
+                        <span class="skill-tag">Excel</span>
+                    </div>
+                </div>
+                <div class="skill-category card">
+                    <h3>Automation Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">n8n.com</span>
+                        <span class="skill-tag">Make.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="background-color: rgba(30, 41, 59, 0.3);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>CognifyAI</h3>
+                        <p>AI-powered virtual data analyst that automates data exploration, reporting, and insights using n8n + LLMs. It connects to CSV, Excel, SQL, and APIs to answer queries, generate reports, and streamline workflows.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Nikhilpmarihal/AI-Data-Analyst-Agent" class="project-link" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>StockScope AI</h3>
+                        <p>An AI-powered news research tool designed for equity research analysts. It streamlines the process of gathering, analyzing, and summarizing financial news, enabling faster and more data-driven investment research.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Nikhilpmarihal/StockScope-AI-AI-powered-stock-news-research" class="project-link" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>HR Analytics: Staff Insights & Beyond</h3>
+                        <p>An interactive Tableau dashboard showcasing key HR metrics, from employee demographics to attrition trends, helping HR teams make data-driven decisions and retain top talent.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Nikhilpmarihal/HR--Staff-Insights-and-More---Tableau" class="project-link" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>DataMartX - DWH & Analytics</h3>
+                        <p>A comprehensive SQL-based data warehousing and analytics solution - from building a data warehouse to generating actionable insights.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Nikhilpmarihal/DataMartX-End-to-End-DWH-Analytics" class="project-link" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Awards</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h3>Sports Analytics</h3>
+                    <p>Rajasthan Royals</p>
+                </div>
+                <div class="cert-item">
+                    <h3>AI Fluency: Framework & Foundations</h3>
+                    <p>Anthropic</p>
+                </div>
+                <div class="cert-item">
+                    <h3>ChatGPT Prompt Engineering for Developers</h3>
+                    <p>OpenAI</p>
+                </div>
+                <div class="award-item">
+                    <h3>HackAI – Hackathon (2024)</h3>
+                    <p>2nd Place</p>
+                </div>
+                <div class="award-item">
+                    <h3>UNNAYAN - National Level Trading Simulation Competition (2025)</h3>
+                    <p>2nd Place</p>
+                </div>
+                <div class="award-item">
+                    <h3>2080 – Innovative & Sustainability (2023)</h3>
+                    <p>6th Place</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.linkedin.com/in/nikhilpmarihal/details/certifications/" class="btn" target="_blank">View All Certifications</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact & Links -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Connect With Me</h2>
+            </div>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">
+                I'm always open to discussing opportunities in data analytics, AI, and business intelligence. Feel free to reach out!
+            </p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/nikhilpmarihal/" class="contact-link" target="_blank">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Nikhilpmarihal" class="contact-link" target="_blank">
+                    GitHub
+                </a>
+                <a href="https://medium.com/@nikhilpmarihal9" class="contact-link" target="_blank">
+                    Medium
+                </a>
+                <a href="https://nikhil-p-marihal-portfolio.vercel.app/" class="contact-link" target="_blank">
+                    Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2025 Nikhil P Marihal. All rights reserved.</p>
+            <p class="footer-text">Business Analytics Student | PES University | Google Gemini Certified</p>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll script -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effect to skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.transition = 'transform 0.2s';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
